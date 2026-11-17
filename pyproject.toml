@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plutonita-world-domination"
+version = "1.0.0"
+description = "Capitalismo, chicletes e decisões empresariais questionáveis."
+requires-python = ">=3.11"
+dependencies = ["rich>=13.7,<15"]
+
+[project.scripts]
+plutonita = "plutonita.ui.menus:main"
+
+[tool.setuptools.packages.find]
+include = ["plutonita*"]
+
+[tool.setuptools.package-data]
+plutonita = ["data/*.json"]

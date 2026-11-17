@@ -1,0 +1,47 @@
+test_cannot_spend_money_they_do_not_have (test_competitors.CompetitorTests.test_cannot_spend_money_they_do_not_have) ... ok
+test_insolvency_removes_rival (test_competitors.CompetitorTests.test_insolvency_removes_rival) ... ok
+test_paid_actions_reduce_cash (test_competitors.CompetitorTests.test_paid_actions_reduce_cash) ... ok
+test_rival_laboratory_does_not_grant_free_products (test_competitors.CompetitorTests.test_rival_laboratory_does_not_grant_free_products) ... ok
+test_rival_reacts_to_attack (test_competitors.CompetitorTests.test_rival_reacts_to_attack) ... ok
+test_capacity_money_and_market_totals (test_economy.EconomyTests.test_capacity_money_and_market_totals) ... ok
+test_distribution_respects_priority (test_economy.EconomyTests.test_distribution_respects_priority) ... ok
+test_invalid_actions_do_not_spend (test_economy.EconomyTests.test_invalid_actions_do_not_spend) ... ok
+test_investment_is_not_charged_twice (test_economy.EconomyTests.test_investment_is_not_charged_twice) ... ok
+test_all_endings_have_valid_conditions (test_endings.EndingTests.test_all_endings_have_valid_conditions) ... ok
+test_no_unearned_special_ending (test_endings.EndingTests.test_no_unearned_special_ending) ... ok
+test_priority_and_antitrust_agreement (test_endings.EndingTests.test_priority_and_antitrust_agreement) ... ok
+test_catalog_integrity (test_events.EventTests.test_catalog_integrity) ... ok
+test_delayed_effect_exactly_once (test_events.EventTests.test_delayed_effect_exactly_once) ... ok
+test_effects_start_after_event_and_expire (test_events.EventTests.test_effects_start_after_event_and_expire) ... ok
+test_events_remain_resolvable_with_negative_cash (test_events.EventTests.test_events_remain_resolvable_with_negative_cash) ... ok
+test_flavor_chaos_and_annual_conditions (test_events.EventTests.test_flavor_chaos_and_annual_conditions) ... ok
+test_intern_four_chapters (test_events.EventTests.test_intern_four_chapters) ... ok
+test_invalid_choice_does_not_consume_rng_or_cash (test_events.EventTests.test_invalid_choice_does_not_consume_rng_or_cash) ... ok
+test_story_cannot_resurrect_retired_intern (test_events.EventTests.test_story_cannot_resurrect_retired_intern) ... ok
+test_bankruptcy_is_early_and_recovery_loan_works (test_gameplay.GameplayTests.test_bankruptcy_is_early_and_recovery_loan_works) ... ok
+test_eight_events_and_no_mutation_after_closing (test_gameplay.GameplayTests.test_eight_events_and_no_mutation_after_closing) ... ok
+test_experiment_requires_progress_and_is_reproducible (test_gameplay.GameplayTests.test_experiment_requires_progress_and_is_reproducible) ... ok
+test_full_campaign_all_strategies_reproducible (test_gameplay.GameplayTests.test_full_campaign_all_strategies_reproducible) ... ok
+test_legal_paths_to_financial_and_regulatory_failure (test_gameplay.GameplayTests.test_legal_paths_to_financial_and_regulatory_failure) ... ok
+test_terminal_full_campaign_and_pending_resume (test_gameplay.GameplayTests.test_terminal_full_campaign_and_pending_resume) ... ok
+test_terminal_handles_invalid_input_and_eof (test_gameplay.GameplayTests.test_terminal_handles_invalid_input_and_eof) ... ok
+test_two_actions_and_free_config (test_gameplay.GameplayTests.test_two_actions_and_free_config) ... ok
+test_ui_narrow_and_no_color (test_gameplay.GameplayTests.test_ui_narrow_and_no_color) ... ok
+test_balance_is_saved_with_campaign (test_persistence.PersistenceTests.test_balance_is_saved_with_campaign) ... ok
+test_every_transition_survives_reload (test_persistence.PersistenceTests.test_every_transition_survives_reload) ... ok
+test_pending_event_roundtrip_and_rng (test_persistence.PersistenceTests.test_pending_event_roundtrip_and_rng) ... ok
+test_profile_completion_is_idempotent (test_persistence.PersistenceTests.test_profile_completion_is_idempotent) ... ok
+test_rejects_impossible_state_without_overwriting_file (test_persistence.PersistenceTests.test_rejects_impossible_state_without_overwriting_file) ... ok
+test_truncated_and_unknown_save_versions (test_persistence.PersistenceTests.test_truncated_and_unknown_save_versions) ... ok
+test_annual_demand_and_halloween_are_consistent (test_ui.InterfaceTests.test_annual_demand_and_halloween_are_consistent) ... ok
+test_clear_between_advanced_screens_and_feedback_survives (test_ui.InterfaceTests.test_clear_between_advanced_screens_and_feedback_survives) ... ok
+test_clear_on_terminal_only_and_can_disable (test_ui.InterfaceTests.test_clear_on_terminal_only_and_can_disable) ... ok
+test_dashboard_fits_common_terminal (test_ui.InterfaceTests.test_dashboard_fits_common_terminal) ... ok
+test_proposals_and_company_are_read_only (test_ui.InterfaceTests.test_proposals_and_company_are_read_only) ... ok
+test_spent_actions_hide_choices_and_block_input (test_ui.InterfaceTests.test_spent_actions_hide_choices_and_block_input) ... ok
+test_zero_actions_advance_without_extra_confirmation (test_ui.InterfaceTests.test_zero_actions_advance_without_extra_confirmation) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 1.239s
+
+OK

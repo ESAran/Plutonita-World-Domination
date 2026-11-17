@@ -1,0 +1,17 @@
++------------------------ A FÁBRICA DESENVOLVEU PERNAS ------------------------+
+| A unidade cruzou a fronteira com o Uruguai. O contador exige saber se        |
+| deslocamento conta como depreciação.                                         |
++------------------------------------------------------------------------------+
+DECISÃO DE 2000 — não usa ação. Caixa: R$ 14.238,71
+
+[1] Transformá-la em distribuidora ambulante — R$ 850,00
+    Caos +10; abre América Latina (exceto Brasil); desdobramento futuro em 6 
+ano(s)
+
+[2] Reconhecer sua independência e contratar fornecimento — R$ 0,00
+    Caos +5; capacidade +250; desdobramento futuro em 6 ano(s)
+
+[3] Contratar uma equipe de captura — R$ 500,00
+    Caos -8; reputação +3
+
+[0] Salvar e sair; resolver depois

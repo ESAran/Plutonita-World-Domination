@@ -1,0 +1,151 @@
+[
+  {
+    "id": "lingua",
+    "name": "Língua Ácida",
+    "description": "Limão, com recheio ácido.",
+    "category": "popular",
+    "cost": 0.88,
+    "attraction": 1.0,
+    "price_bonus": 0.0,
+    "affinity": {
+      "br": 1.2,
+      "latam": 1.25,
+      "africa": 1.2
+    },
+    "special": "Custo baixo e alcance popular.",
+    "unlock": "Produto inicial.",
+    "steps": 0,
+    "events": [
+      "linguas",
+      "microfones"
+    ],
+    "color": "green",
+    "fictional": false
+  },
+  {
+    "id": "baba",
+    "name": "Baba de Bruxa",
+    "description": "Maçã e uva, com recheio efervescente.",
+    "category": "viral",
+    "cost": 1.02,
+    "attraction": 1.1,
+    "price_bonus": 0.03,
+    "affinity": {
+      "na": 1.25,
+      "asia": 1.15
+    },
+    "special": "Demanda oscila ±12%; marketing recebe bônus.",
+    "unlock": "1 investimento em pesquisa.",
+    "steps": 1,
+    "events": [
+      "bolhas_futuro"
+    ],
+    "color": "magenta",
+    "fictional": false
+  },
+  {
+    "id": "dentada",
+    "name": "Dentada Ardente",
+    "description": "Laranja e pimenta-vermelha, com sensação quente e ácida.",
+    "category": "premium",
+    "cost": 1.28,
+    "attraction": 0.96,
+    "price_bonus": 0.22,
+    "affinity": {
+      "west": 1.3,
+      "na": 1.2
+    },
+    "special": "Margem alta; sinergia com Abraço Congelante.",
+    "unlock": "2 investimentos em pesquisa.",
+    "steps": 2,
+    "events": [
+      "chamas"
+    ],
+    "color": "red",
+    "fictional": false
+  },
+  {
+    "id": "abraco",
+    "name": "Abraço Congelante",
+    "description": "Limão e mentol, com sensação gelada.",
+    "category": "estavel",
+    "cost": 1.06,
+    "attraction": 1.08,
+    "price_bonus": 0.05,
+    "affinity": {
+      "sea": 1.3,
+      "east": 1.25
+    },
+    "special": "Reconhecimento decai menos; contrapeso térmico à Dentada.",
+    "unlock": "1 investimento em pesquisa.",
+    "steps": 1,
+    "events": [
+      "deposito"
+    ],
+    "color": "blue",
+    "fictional": false
+  },
+  {
+    "id": "abobora",
+    "name": "Cabeça de Abóbora",
+    "description": "Laranja, com recheio ácido; temática de Halloween.",
+    "category": "sazonal",
+    "cost": 1.1,
+    "attraction": 1.02,
+    "price_bonus": 0.13,
+    "affinity": {
+      "na": 1.25,
+      "west": 1.15
+    },
+    "special": "Campanhas de Halloween todo ano: bônus anual de atração de 9,2%. Abre histórias sobrenaturais.",
+    "unlock": "1 investimento em pesquisa.",
+    "steps": 1,
+    "events": [
+      "abobora_presidente"
+    ],
+    "color": "orange3",
+    "fictional": false
+  },
+  {
+    "id": "zumbi",
+    "name": "Mordida de Zumbi",
+    "description": "Cereja, recheio efervescente e efeito de colorir a língua.",
+    "category": "viral",
+    "cost": 1.03,
+    "attraction": 1.1,
+    "price_bonus": 0.04,
+    "affinity": {
+      "latam": 1.2,
+      "na": 1.25
+    },
+    "special": "Atratividade cresce ao longo da campanha; risco narrativo.",
+    "unlock": "2 investimentos em pesquisa.",
+    "steps": 2,
+    "events": [
+      "zumbis"
+    ],
+    "color": "bright_green",
+    "fictional": false
+  },
+  {
+    "id": "atomic",
+    "name": "Atomic Mistério",
+    "description": "Linha com diferentes sensações surpresa.",
+    "category": "experimental",
+    "cost": 1.2,
+    "attraction": 1.18,
+    "price_bonus": 0.12,
+    "affinity": {
+      "asia": 1.35,
+      "west": 1.15
+    },
+    "special": "Oscilação ±18%; pesquisa e Caos abrem descobertas.",
+    "unlock": "Nível de pesquisa 1 e 2 investimentos.",
+    "steps": 2,
+    "events": [
+      "sabor_inexistente"
+    ],
+    "color": "cyan",
+    "fictional": false
+  }
+]

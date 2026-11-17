@@ -1,0 +1,37 @@
+[
+  {
+    "cenario": "Excesso industrial sem expansão",
+    "seed": "1",
+    "final": "bankrupt",
+    "mes": 18,
+    "caixa": -3571.4,
+    "participacao": 0.010474275180157533,
+    "agressividade": 0,
+    "decisoes": [
+      "2000: A FÁBRICA DESENVOLVEU PERNAS — Reconhecer sua independência e contratar fornecimento",
+      "2003: MUSEU EXPÕE SEU BALANÇO COMO FICÇÃO — Vender edições autografadas",
+      "2006: A FÁBRICA VOLTOU GRÁVIDA — Negociar adoção por uma cooperativa",
+      "2009: MOSQUITOS CRIAM UMA AGÊNCIA DE PUBLICIDADE — Distribuir repelente com a marca",
+      "2012: GOMAMAX REDUZI O PREÇO DO PRÓPRIO CEO — Aguardar a liquidação acabar"
+    ]
+  },
+  {
+    "cenario": "Concentração e guerra comercial",
+    "seed": "1000",
+    "final": "antitrust",
+    "mes": 24,
+    "caixa": 258474.99,
+    "participacao": 0.4110057078543291,
+    "agressividade": 10,
+    "decisoes": [
+      "2000: A FÁBRICA DESENVOLVEU PERNAS — Reconhecer sua independência e contratar fornecimento",
+      "2003: EPIDEMIA DE LÍNGUAS GIGANTES — Fornecer microfones de cabo longo",
+      "2006: A FÁBRICA VOLTOU GRÁVIDA — Negociar adoção por uma cooperativa",
+      "2009: O SAC AGORA ATENDE INCÊNDIOS — Criar cobertura contra arrotos térmicos",
+      "2012: SEU RIVAL SÃO TRÊS CRIANÇAS NUM SOBRETUDO — Respeitar o sigilo da lancheira",
+      "2015: A REVOLUÇÃO DOS DENTISTAS — Reduzir as campanhas por dois anos",
+      "2018: AUDITORIA ANTITRUSTE DO MINISTÉRIO DAS BOLHAS — Contestar e manter a estratégia",
+      "2021: O ÚLTIMO TRIMESTRE PEDIU HORA EXTRA — Manter o expediente de 24 anos"
+    ]
+  }
+]

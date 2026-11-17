@@ -1,0 +1,2867 @@
+[
+  {
+    "id": "estagiario",
+    "title": "O ESTAGIÁRIO VIROU UM CHICLETE",
+    "description": "Os exames confirmaram: André agora é 98% goma e 2% expectativa de efetivação. O RH pergunta se embalagem substitui crachá.",
+    "conditions": {
+      "max_month": 6
+    },
+    "weight": 3,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Promover André a diretor de consistência",
+        "cost": 450,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 8,
+          "reputation": 4,
+          "flags": {
+            "intern_director": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "sapatos"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar André como consultor externo",
+        "cost": 150,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 3,
+          "flags": {
+            "intern_consultant": true
+          },
+          "schedule": [
+            {
+              "delay": 4,
+              "effects": {
+                "cash": 800,
+                "narrative": "André enviou um parecer mastigável. A economia de papel rendeu R$ 800."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "label": "Custear a reversão e encerrar o contrato",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": -3,
+          "chaos": -4,
+          "flags": {
+            "intern_departed": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "sapatos",
+    "title": "SAPATOS INDUSTRIAIS, TAMANHO GALPÃO",
+    "description": "André apresenta sapatos para instalações ambulantes. A planilha informa que cada cadarço exige licença ambiental.",
+    "conditions": {
+      "flags_all": [
+        "intern_director"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Financiar o protótipo",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 700,
+          "chaos": 7,
+          "flags": {
+            "shoes": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "sindicato"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Testar apenas as palmilhas",
+        "cost": 300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 250,
+          "flags": {
+            "shoes": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "sindicato"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Encerrar o projeto e aposentar André",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5,
+          "remove_flags": [
+            "intern_director"
+          ],
+          "flags": {
+            "intern_retired": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "sindicato",
+    "title": "SINDICATO DAS GOMAS CONSCIENTES",
+    "description": "André sindicalizou o estoque. A primeira reivindicação é parar de chamar colegas de unidades vendidas.",
+    "conditions": {
+      "flags_all": [
+        "intern_director",
+        "shoes"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar participação dos trabalhadores",
+        "cost": 1000,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "flags": {
+            "goma_citizens": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "golpe"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Oferecer um conselho consultivo",
+        "cost": 300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 4,
+          "chaos": 5,
+          "flags": {
+            "goma_citizens": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "golpe"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Transformar o estoque em cooperativa externa",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": -250,
+          "reputation": 5,
+          "remove_flags": [
+            "intern_director"
+          ],
+          "flags": {
+            "cooperative": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "golpe",
+    "title": "ASSEMBLEIA EXTRAORDINÁRIA DA MATÉRIA",
+    "description": "André apresenta uma Constituição grudada no teto. Os chicletes querem voto, território e o direito de não serem saborizados.",
+    "conditions": {
+      "flags_all": [
+        "intern_director",
+        "goma_citizens"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Reconhecer a República Democrática da Goma",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 12,
+          "flags": {
+            "republic": true
+          },
+          "ending": "republic"
+        }
+      },
+      {
+        "label": "Negociar cidadania e manter a companhia",
+        "cost": 1600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "chaos": -8,
+          "flags": {
+            "goma_treaty": true
+          }
+        }
+      },
+      {
+        "label": "Comprar as ações do sindicato",
+        "cost": 2600,
+        "risk": "Reputação -12; o sindicato aceita a proposta.",
+        "effects": {
+          "reputation": -12,
+          "flags": {
+            "union_bought": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pernas",
+    "title": "A FÁBRICA DESENVOLVEU PERNAS",
+    "description": "A unidade cruzou a fronteira com o Uruguai. O contador exige saber se deslocamento conta como depreciação.",
+    "conditions": {
+      "max_month": 12
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Transformá-la em distribuidora ambulante",
+        "cost": 850,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 10,
+          "unlock_market": "latam",
+          "flags": {
+            "walking_factory": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "gravida"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Reconhecer sua independência e contratar fornecimento",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 250,
+          "chaos": 5,
+          "flags": {
+            "walking_factory": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "gravida"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar uma equipe de captura",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "reputation": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "gravida",
+    "title": "A FÁBRICA VOLTOU GRÁVIDA",
+    "description": "O galpão voltou com uma filial recém-nascida. A maternidade exige uma certidão com o nome do zoneamento urbano.",
+    "conditions": {
+      "flags_all": [
+        "walking_factory"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Registrar e acolher a filial",
+        "cost": 1200,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 1100,
+          "maintenance": 240,
+          "chaos": 10,
+          "flags": {
+            "factory_family": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "creche"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Criar guarda compartilhada internacional",
+        "cost": 400,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 550,
+          "maintenance": 120,
+          "flags": {
+            "factory_family": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "creche"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Negociar adoção por uma cooperativa",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1500,
+          "reputation": 3,
+          "remove_flags": [
+            "walking_factory"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "creche",
+    "title": "A CRECHE DAS FÁBRICAS EXIGE SOBERANIA",
+    "description": "As instalações aprenderam a andar em bloco. A professora pediu demissão após ser classificada como infraestrutura.",
+    "conditions": {
+      "flags_all": [
+        "factory_family"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Fundar uma federação de fábricas",
+        "cost": 1500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 900,
+          "reputation": 10,
+          "chaos": 12,
+          "flags": {
+            "factory_federation": true
+          }
+        }
+      },
+      {
+        "label": "Construir um parquinho industrial",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.2,
+              "duration": 4,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Licenciar o método pedagógico",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 2600,
+          "flags": {
+            "factory_school": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ratos",
+    "title": "O CONSELHO DOS RATOS",
+    "description": "Os ratos apresentam uma estratégia de distribuição por rodapés. O relatório tem queijo nos anexos, mas números impecáveis.",
+    "conditions": {
+      "max_month": 12
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Dar dois assentos aos ratos",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "chaos": 6,
+          "flags": {
+            "rat_board": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "rato_auditoria"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Comprar somente a consultoria",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "reputation": 3
+        }
+      },
+      {
+        "label": "Contratar uma mediação com o gato",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -3,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "rato_auditoria",
+    "title": "AUDITORIA DE RODAPÉ",
+    "description": "Os conselheiros ratos descobriram receitas ocultas entre as paredes. Exigem uma controladoria com acesso à despensa.",
+    "conditions": {
+      "flags_all": [
+        "rat_board"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Nomear a rata Beatriz controladora",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1800,
+          "flags": {
+            "rat_audit": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "rato_bolsa"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Dividir a descoberta com os funcionários",
+        "cost": 300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "flags": {
+            "rat_audit": true
+          },
+          "schedule": [
+            {
+              "delay": 6,
+              "event": "rato_bolsa"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Encerrar o conselho e ceder o estoque de queijo",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "remove_flags": [
+            "rat_board"
+          ],
+          "efficiency": -1
+        }
+      }
+    ]
+  },
+  {
+    "id": "rato_bolsa",
+    "title": "A BOLSA DE VALORES FICA ATRÁS DA GELADEIRA",
+    "description": "Beatriz oferece uma listagem no mercado de capitais dos roedores. A liquidez é medida em fatias.",
+    "conditions": {
+      "flags_all": [
+        "rat_board",
+        "rat_audit"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Abrir capital no mercado subterrâneo",
+        "cost": 1200,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 6500,
+          "royalty": 0.04,
+          "flags": {
+            "rat_ipo": true
+          }
+        }
+      },
+      {
+        "label": "Permanecer familiar e adquirir as rotas",
+        "cost": 1800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "reputation": 6
+        }
+      },
+      {
+        "label": "Criar uma fundação educacional de ratos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 14,
+          "chaos": -5
+        }
+      }
+    ]
+  },
+  {
+    "id": "lua",
+    "title": "A LUA É FEITA DE PLUTONITA",
+    "description": "Uma amostra lunar mastigou o técnico. O laboratório solicita verba para confirmar se as crateras são marcas de dentes.",
+    "conditions": {
+      "min_month": 12,
+      "max_month": 18,
+      "min_chaos": 30
+    },
+    "weight": 3,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Financiar a missão comercial",
+        "cost": 2200,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 15,
+          "flags": {
+            "moon_mission": true
+          },
+          "schedule": [
+            {
+              "delay": 3,
+              "event": "lua_alfandega"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Vender direitos de transmissão da amostra",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1300,
+          "chaos": 4,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.1,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Devolver a amostra ao céu",
+        "cost": 450,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -12,
+          "reputation": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "lua_alfandega",
+    "title": "ALFÂNDEGA LUNAR EXIGE NOTA FISCAL",
+    "description": "Os selenitas recusam a nave porque chiclete espacial entra na categoria queijo suspeito.",
+    "conditions": {
+      "flags_all": [
+        "moon_mission"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Pagar o imposto em amostras",
+        "cost": 1600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 10,
+          "flags": {
+            "moon_license": true
+          },
+          "schedule": [
+            {
+              "delay": 3,
+              "event": "lua_contrato"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Negociar cidadania para o foguete",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": -3,
+          "chaos": 15,
+          "flags": {
+            "moon_license": true
+          },
+          "schedule": [
+            {
+              "delay": 3,
+              "event": "lua_contrato"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Trazer a equipe de volta",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 700,
+          "remove_flags": [
+            "moon_mission"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "lua_contrato",
+    "title": "FRANQUIA DO LADO OCULTO",
+    "description": "A Lua aceita fornecer matéria-prima, mas deseja participar da fotossíntese humana. O jurídico classificou a cláusula como inovadora.",
+    "conditions": {
+      "flags_all": [
+        "moon_license"
+      ],
+      "scheduled_only": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Autorizar o intercâmbio biológico",
+        "cost": 1800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 25,
+          "efficiency": 1,
+          "flags": {
+            "biosphere": true,
+            "moon_partner": true
+          }
+        }
+      },
+      {
+        "label": "Limitar o acordo a matérias-primas",
+        "cost": 1300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 2,
+          "flags": {
+            "moon_partner": true
+          }
+        }
+      },
+      {
+        "label": "Vender o documentário e encerrar a missão",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 4500,
+          "reputation": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "franca",
+    "title": "A FRANÇA PROIBIU CHICLETES REDONDOS",
+    "description": "O formato ameaça a identidade cultural do croissant. Diplomatas sugerem uma goma com complexo de superioridade.",
+    "conditions": {
+      "market": "west"
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Produzir chicletes em formato de vírgula",
+        "cost": 800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.3,
+              "duration": 4,
+              "market": "west",
+              "company": "player"
+            }
+          ],
+          "reputation": 4
+        }
+      },
+      {
+        "label": "Contestar a geometria no tribunal",
+        "cost": 300,
+        "risk": "50%: indenização de R$ 1.200; caso contrário, nenhuma restituição.",
+        "effects": {
+          "chance": {
+            "probability": 0.5,
+            "success": {
+              "cash": 1200
+            },
+            "failure": {}
+          },
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.85,
+              "duration": 2,
+              "market": "west",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Suspender anúncios redondos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.8,
+              "duration": 2,
+              "market": "west",
+              "company": "player"
+            }
+          ],
+          "chaos": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "sobretudo",
+    "title": "SEU RIVAL SÃO TRÊS CRIANÇAS NUM SOBRETUDO",
+    "description": "Uma perícia identificou três assinaturas em giz de cera. O Conselho de Administração pediu suco antes de se pronunciar.",
+    "conditions": {
+      "min_month": 7
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Expor a estrutura societária da GomaMax",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": -4,
+          "aggression": 1,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.7,
+              "duration": 3,
+              "market": "all",
+              "company": "goma"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Oferecer um acordo de recreio",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "flags": {
+            "recess_deal": true
+          }
+        }
+      },
+      {
+        "label": "Respeitar o sigilo da lancheira",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": "bolhas_futuro",
+    "title": "A BABA DE BRUXA PREVÊ O FUTURO",
+    "description": "Bolhas antecipam os índices econômicos. Algumas também revelam quem terminará a reunião com o pote de biscoitos.",
+    "conditions": {
+      "flavor": "baba"
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar uma mesa de previsão",
+        "cost": 900,
+        "risk": "30%: a bolha erra e custa R$ 500; 70%: rende R$ 2.000 em dois anos.",
+        "effects": {
+          "chaos": 8,
+          "chance": {
+            "probability": 0.7,
+            "success": {
+              "schedule": [
+                {
+                  "delay": 2,
+                  "effects": {
+                    "cash": 2000,
+                    "narrative": "A previsão da Baba se confirmou: R$ 2.000 de economia contratual."
+                  }
+                }
+              ]
+            },
+            "failure": {
+              "schedule": [
+                {
+                  "delay": 2,
+                  "effects": {
+                    "cash": -500,
+                    "narrative": "A bolha confundiu o futuro com um comercial antigo: custo de R$ 500."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "label": "Publicar previsões gratuitas",
+        "cost": 300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar um analista para estourar as bolhas",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -7
+        }
+      }
+    ]
+  },
+  {
+    "id": "linguas",
+    "title": "GREVE INTERNACIONAL DAS LÍNGUAS",
+    "description": "As línguas exigem férias e adicional de acidez. A negociação começa quando os representantes terminarem de pronunciar a pauta.",
+    "conditions": {
+      "min_month": 6
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Conceder descanso remunerado",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.9,
+              "duration": 1,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Criar um rodízio de degustação",
+        "cost": 350,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.08,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "flags": {
+            "tongue_treaty": true
+          }
+        }
+      },
+      {
+        "label": "Terceirizar a degustação para manequins",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 7,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.8,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "dentistas",
+    "title": "A REVOLUÇÃO DOS DENTISTAS",
+    "description": "A Frente Molar anuncia um boicote. Seu manifesto tem 32 artigos e recomenda fio dental entre cada parágrafo.",
+    "conditions": {
+      "min_month": 7
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Financiar educação odontológica",
+        "cost": 1000,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 14,
+          "flags": {
+            "dental_peace": true
+          }
+        }
+      },
+      {
+        "label": "Patrocinar o sindicato dos dentes de leite",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": -4,
+          "chaos": 7,
+          "flags": {
+            "dentist_enemy": true
+          },
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.3,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "schedule": [
+            {
+              "delay": 3,
+              "effects": {
+                "cash": -600,
+                "narrative": "A Frente Molar recorreu: acordo judicial de R$ 600."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "label": "Reduzir as campanhas por dois anos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.85,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "reputation": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "bolha_imobiliaria",
+    "title": "BOLHA IMOBILIÁRIA LITERAL",
+    "description": "Uma bolha engoliu um bairro e passou a cobrar condomínio. Ela aceita ser incorporada, mas exige síndico.",
+    "conditions": {
+      "min_chaos": 25
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Regularizar e dividir os aluguéis",
+        "cost": 1200,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "schedule": [
+            {
+              "delay": 2,
+              "effects": {
+                "cash": 1900,
+                "narrative": "A bolha repassou R$ 1.900 em aluguéis; os moradores receberam desconto."
+              }
+            }
+          ],
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Estourar a bolha com reassentamento",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "chaos": -5
+        }
+      },
+      {
+        "label": "Declarar o bairro patrimônio elástico",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.12,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "terca",
+    "title": "O SABOR DE TERÇA-FEIRA",
+    "description": "Consumidores desaparecem às quartas. O atendimento considera isso uma redução de fila, mas o sindicato discorda.",
+    "conditions": {
+      "flags_all": [
+        "recipe_terca"
+      ]
+    },
+    "weight": 4,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar assinatura para semanas de seis dias",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1500,
+          "chaos": 15,
+          "reputation": -4,
+          "flags": {
+            "calendar_broken": true
+          }
+        }
+      },
+      {
+        "label": "Financiar um antídoto de quinta-feira",
+        "cost": 800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "chaos": -12
+        }
+      },
+      {
+        "label": "Indenizar os aniversariantes de quarta",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": -350,
+          "reputation": 4,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.15,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "papa",
+    "title": "O PAPA DA GOMA",
+    "description": "Um autoproclamado pontífice proíbe mascar depois da meia-noite. O setor de vendas pede uma definição formal de fuso horário.",
+    "conditions": {
+      "min_chaos": 20
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Propor um concílio de distribuição",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.18,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Criar uma liturgia de bolhas",
+        "cost": 850,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 15,
+          "flags": {
+            "gum_church": true
+          },
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.35,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Vender somente em horário comercial",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.9,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "abobora_presidente",
+    "title": "A ABÓBORA PRESIDENTE",
+    "description": "Antecipando o Halloween, milhares de abóboras elegeram uma prefeita e exigem royalties. Ela ameaça transformar toda reunião em festa municipal.",
+    "conditions": {
+      "flavor": "abobora"
+    },
+    "weight": 6,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Assinar acordo sazonal de imagem",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.45,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "flags": {
+            "pumpkin_treaty": true
+          }
+        }
+      },
+      {
+        "label": "Nomeá-la embaixadora da marca",
+        "cost": 1100,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "chaos": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.6,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Criar um fundo municipal de sementes",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": -250,
+          "reputation": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "cfo",
+    "title": "O DIRETOR FINANCEIRO É UMA BOLHA",
+    "description": "A auditoria encontrou apenas ar no gabinete. O CFO argumenta que isso nunca impediu ninguém de fazer projeções.",
+    "conditions": {
+      "min_chaos": 25
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Efetivar a gestão aerada",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "chaos": 10,
+          "flags": {
+            "bubble_cfo": true
+          }
+        }
+      },
+      {
+        "label": "Contratar um contador com massa corporal",
+        "cost": 400,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "reputation": 5
+        }
+      },
+      {
+        "label": "Vender o ar como consultoria",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 900,
+          "reputation": -5,
+          "chaos": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "microfones",
+    "title": "EPIDEMIA DE LÍNGUAS GIGANTES",
+    "description": "A Língua Ácida gerou uma fila de apresentadores presos aos microfones. As emissoras exigem atendimento com urgência.",
+    "conditions": {
+      "flavor": "lingua"
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Fornecer microfones de cabo longo",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 9,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.12,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Patrocinar o campeonato de dicção",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.4,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Ajustar temporariamente a fórmula",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -6,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.93,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "chamas",
+    "title": "O SAC AGORA ATENDE INCÊNDIOS",
+    "description": "Clientes da Dentada Ardente cospem pequenas chamas e pedem desconto no seguro. As seguradoras respondem com gelo seco.",
+    "conditions": {
+      "flavor": "dentada"
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar cobertura contra arrotos térmicos",
+        "cost": 800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12
+        }
+      },
+      {
+        "label": "Patrocinar a liga dos sopradores de vidro",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.35,
+              "duration": 4,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Distribuir instruções de resfriamento",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.92,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": -5
+        }
+      }
+    ]
+  },
+  {
+    "id": "deposito",
+    "title": "O DEPÓSITO CONGELADO REIVINDICA FRONTEIRAS",
+    "description": "Abraço Congelante transformou um armazém em potência polar. Ele exige embaixada e uma cadeira no conselho de segurança.",
+    "conditions": {
+      "flavor": "abraco"
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Reconhecer sua neutralidade",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 500,
+          "chaos": 8,
+          "flags": {
+            "ice_embassy": true
+          }
+        }
+      },
+      {
+        "label": "Negociar refrigeração industrial",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "chaos": 4
+        }
+      },
+      {
+        "label": "Descongelar por mediação diplomática",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "damage": 200,
+          "reputation": 5,
+          "chaos": -7
+        }
+      }
+    ]
+  },
+  {
+    "id": "zumbis",
+    "title": "ZUMBIS EXIGEM PLANO ODONTOLÓGICO",
+    "description": "Os funcionários continuam trabalhando normalmente, mas querem cobertura para restauração de cérebros. A operadora recusou por condição preexistente.",
+    "conditions": {
+      "flavor": "zumbi"
+    },
+    "weight": 2,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar um plano odontológico inclusivo",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 14,
+          "efficiency": 1,
+          "flags": {
+            "zombie_friend": true
+          }
+        }
+      },
+      {
+        "label": "Promover a equipe ao turno da madrugada",
+        "cost": 400,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 500,
+          "chaos": 9
+        }
+      },
+      {
+        "label": "Oferecer licença com reabilitação",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": -300,
+          "reputation": 6,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "sabor_inexistente",
+    "title": "UM CONSUMIDOR PATENTEOU O INEXISTENTE",
+    "description": "Atomic Mistério revelou um sabor ausente da realidade. A patente ocupa três dimensões e parte da recepção.",
+    "conditions": {
+      "flavor": "atomic"
+    },
+    "weight": 3,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Licenciar a descoberta",
+        "cost": 1100,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "innovation": 1,
+          "chaos": 10,
+          "flags": {
+            "founder_notes": true
+          }
+        }
+      },
+      {
+        "label": "Financiar pesquisa aberta",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "flags": {
+            "founder_notes": true
+          }
+        }
+      },
+      {
+        "label": "Pagar royalties em moeda imaginária",
+        "cost": 0,
+        "risk": "40%: o tribunal materializa uma multa de R$ 600.",
+        "effects": {
+          "chaos": 12,
+          "chance": {
+            "probability": 0.4,
+            "success": {
+              "cash": -600
+            },
+            "failure": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "definitivo",
+    "title": "O FUNDADOR ESTÁ DO OUTRO LADO DO SABOR",
+    "description": "O telefone toca dentro do protótipo. O fundador explica que a fórmula está pronta, mas pede uma auditoria antes da primeira mordida.",
+    "conditions": {
+      "min_month": 18,
+      "flags_all": [
+        "recipe_definitivo",
+        "founder_notes"
+      ]
+    },
+    "weight": 20,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Concluir a fórmula com auditoria",
+        "cost": 1800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 15,
+          "flags": {
+            "definitive": true
+          }
+        }
+      },
+      {
+        "label": "Abrir os resultados à comunidade",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 20,
+          "chaos": -10,
+          "flags": {
+            "open_formula": true
+          }
+        }
+      },
+      {
+        "label": "Vender apenas a tecnologia de embalagem",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 4500,
+          "innovation": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "biosfera",
+    "title": "A BIOSFERA PEDE PARTICIPAÇÃO ACIONÁRIA",
+    "description": "O planeta envia uma proposta: todas as espécies poderão mascar, desde que a empresa aceite a nova composição química da humanidade.",
+    "conditions": {
+      "min_month": 18,
+      "min_chaos": 65
+    },
+    "weight": 8,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Autorizar a adaptação coletiva",
+        "cost": 1800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 25,
+          "reputation": 5,
+          "flags": {
+            "biosphere": true
+          }
+        }
+      },
+      {
+        "label": "Restringir a pesquisa ao jardim",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -15,
+          "reputation": 10
+        }
+      },
+      {
+        "label": "Vender licenças apenas para árvores",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 2200,
+          "chaos": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "elevador",
+    "title": "O ELEVADOR SÓ ACEITA PROMOÇÕES",
+    "description": "Ninguém consegue chegar ao estoque sem subir na carreira. O RH já promoveu uma empilhadeira a gerente regional.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Instalar uma escada hierárquica literal",
+        "cost": 450,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 250,
+          "reputation": 4
+        }
+      },
+      {
+        "label": "Vender cursos no elevador",
+        "cost": 250,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 900,
+          "chaos": 6
+        }
+      },
+      {
+        "label": "Usar o térreo por dois anos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "fax",
+    "title": "FAX DO ANO 2098 SOLICITA ORÇAMENTO",
+    "description": "O futuro deseja oito toneladas de chiclete para reparar o tempo. A mensagem veio sem DDD, mas com firma reconhecida.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Aceitar sinal e reservar capacidade",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1800,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.85,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Pedir referências bancárias do futuro",
+        "cost": 200,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "schedule": [
+            {
+              "delay": 3,
+              "effects": {
+                "cash": 1000,
+                "narrative": "O fax de 2098 enviou R$ 1.000 de sinal. O banco conferiu o calendário duas vezes."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "label": "Desligar o fax durante a reunião",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -4
+        }
+      }
+    ]
+  },
+  {
+    "id": "carimbo",
+    "title": "CARIMBOS GANHAM DIREITO A FÉRIAS",
+    "description": "Os carimbos pararam de reconhecer documentos. A burocracia considera a situação extremamente regular.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Contratar uma escala de carimbos",
+        "cost": 350,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 5,
+          "efficiency": 1
+        }
+      },
+      {
+        "label": "Automatizar com polvos notariais",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 10,
+          "capacity": 350
+        }
+      },
+      {
+        "label": "Aguardar o retorno das férias",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.94,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "sombra",
+    "title": "A SOMBRA DA FÁBRICA ABRIU CONCORRÊNCIA",
+    "description": "A nova empresa funciona apenas ao pôr do sol e cobra metade do preço. O jurídico insiste que é um problema de iluminação.",
+    "conditions": {
+      "min_chaos": 20
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Comprar os direitos de imagem da sombra",
+        "cost": 750,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": 5
+        }
+      },
+      {
+        "label": "Instalar iluminação sem sombras",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "reputation": 3
+        }
+      },
+      {
+        "label": "Assinar divisão de horários",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.9,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "schedule": [
+            {
+              "delay": 3,
+              "effects": {
+                "cash": 800,
+                "narrative": "A sombra pagou R$ 800 pela licença do turno noturno."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "gravidade",
+    "title": "A GRAVIDADE FOI TERCEIRIZADA",
+    "description": "A empresa de gravidade suspendeu o serviço por divergência contratual. O estoque agora ocupa o teto.",
+    "conditions": {
+      "min_chaos": 35
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Contratar um plano gravitacional básico",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5,
+          "capacity": 200
+        }
+      },
+      {
+        "label": "Exportar por flutuação",
+        "cost": 850,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 12,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.35,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Prender o estoque com barbante",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "damage": 250,
+          "reputation": -2
+        }
+      }
+    ]
+  },
+  {
+    "id": "oceano",
+    "title": "O OCEANO PEDIU SABOR MENTA",
+    "description": "Uma onda protocolou a solicitação em cartório. Pesquisadores consideram o oceano um cliente de alto volume e baixa pontualidade.",
+    "conditions": {
+      "min_month": 10,
+      "min_chaos": 25
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Fornecer uma amostra sustentável",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "chaos": 7,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.2,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Pesquisar transporte por marés",
+        "cost": 1000,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "innovation": 1
+        }
+      },
+      {
+        "label": "Encaminhar a solicitação à chuva",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 5,
+          "schedule": [
+            {
+              "delay": 2,
+              "effects": {
+                "cash": -200,
+                "narrative": "A chuva cobrou R$ 200 pelo encaminhamento do protocolo."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "museu",
+    "title": "MUSEU EXPÕE SEU BALANÇO COMO FICÇÃO",
+    "description": "Os visitantes elogiam a construção de mundo. O curador pede que os prejuízos sejam escritos em primeira pessoa.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Patrocinar a exposição itinerante",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.15,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Vender edições autografadas",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 700,
+          "reputation": -3
+        }
+      },
+      {
+        "label": "Auditar os números com o curador",
+        "cost": 350,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "efficiency": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "mosquitos",
+    "title": "MOSQUITOS CRIAM UMA AGÊNCIA DE PUBLICIDADE",
+    "description": "A proposta promete alcance individual de 100%. A métrica de engajamento é a quantidade de tapas.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Contratar apenas anúncios silenciosos",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "reputation": 3
+        }
+      },
+      {
+        "label": "Lançar campanha de zumbido premium",
+        "cost": 800,
+        "risk": "Reputação -7 e Caos +7.",
+        "effects": {
+          "reputation": -7,
+          "chaos": 7,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.5,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Distribuir repelente com a marca",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "espelho",
+    "title": "O ESPELHO QUER EQUIPARAÇÃO SALARIAL",
+    "description": "Seu reflexo afirma trabalhar exatamente as mesmas horas. Exige férias em um lugar onde você não esteja.",
+    "conditions": {
+      "min_chaos": 15
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Promovê-lo a diretor internacional",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 9,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.3,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar mediação óptica",
+        "cost": 300,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "reputation": 5
+        }
+      },
+      {
+        "label": "Substituir o espelho por uma planilha",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": -2,
+          "efficiency": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "dragao",
+    "title": "UM DRAGÃO COMPROU A DÍVIDA DA EMPRESA",
+    "description": "O credor aceita reuniões, mas exige salas resistentes ao fogo. Segundo ele, juros compostos são uma tradição milenar.",
+    "conditions": {
+      "min_month": 10
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Trocar uma palestra por abatimento",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1200,
+          "chaos": 7
+        }
+      },
+      {
+        "label": "Contratá-lo como caldeira externa",
+        "cost": 800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "chaos": 10
+        }
+      },
+      {
+        "label": "Apresentar um plano de pagamentos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 5,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "antitruste",
+    "title": "AUDITORIA ANTITRUSTE DO MINISTÉRIO DAS BOLHAS",
+    "description": "O ministério afirma que há concentração excessiva de goma. Uma audiência avaliará práticas comerciais e diâmetro das bolhas.",
+    "conditions": {
+      "min_month": 16,
+      "min_aggression": 3
+    },
+    "weight": 5,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Assinar compromisso de concorrência",
+        "cost": 1500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "aggression": -3,
+          "reputation": 10,
+          "flags": {
+            "antitrust_settlement": true
+          }
+        }
+      },
+      {
+        "label": "Contestar e manter a estratégia",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "aggression": 1,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.15,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Ceder tecnologia a cooperativas",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8,
+          "aggression": -2,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.9,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "bubble_rival",
+    "title": "DR. BUBBLE CLONOU A PRÓPRIA REUNIÃO",
+    "description": "Agora existem sete reuniões de diretoria ocorrendo no mesmo minuto. Nenhuma chegou à pauta principal.",
+    "conditions": {
+      "min_month": 7,
+      "rival": "bubble"
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Licenciar o tempo excedente",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "innovation": 1,
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Patrocinar uma ata unificada",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 7,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.15,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Concorrer enquanto eles deliberam",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.8,
+              "duration": 2,
+              "market": "all",
+              "company": "bubble"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "sweet_reuniao",
+    "title": "SWEETCORP DECLARA REUNIÃO PERMANENTE",
+    "description": "A diretoria passou a ser reconhecida como um fuso horário. Propostas comerciais devem ser entregues entre um café e a eternidade.",
+    "conditions": {
+      "min_month": 7,
+      "rival": "sweet"
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Comprar espaço na pauta",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.35,
+              "duration": 3,
+              "market": "na",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar os funcionários esquecidos no corredor",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "capacity": 450,
+          "reputation": 4
+        }
+      },
+      {
+        "label": "Lançar campanha sobre objetividade",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.82,
+              "duration": 3,
+              "market": "all",
+              "company": "sweet"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "gomamax_preco",
+    "title": "GOMAMAX REDUZI O PREÇO DO PRÓPRIO CEO",
+    "description": "O executivo foi colocado em promoção. Ele considera a medida uma oportunidade de aumentar o giro de liderança.",
+    "conditions": {
+      "rival": "goma"
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Contratar consultoria por atacado",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1
+        }
+      },
+      {
+        "label": "Anunciar qualidade acima do desconto",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.2,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Aguardar a liquidação acabar",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.1,
+              "duration": 2,
+              "market": "all",
+              "company": "goma"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "impressora",
+    "title": "A IMPRESSORA IMPRIMIU UM ACIONISTA",
+    "description": "O novo sócio veio em papel A4 e exige proteção contra umidade. Sua assinatura é surpreendentemente válida.",
+    "conditions": {
+      "min_chaos": 20
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Integrá-lo ao conselho",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1400,
+          "royalty": 0.01,
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Transformá-lo em porta-voz dobrável",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Negociar recompra e aposentadoria",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5
+        }
+      }
+    ]
+  },
+  {
+    "id": "buraco",
+    "title": "BURACO NEGRO NO REFEITÓRIO",
+    "description": "A anomalia consome toda a comida, mas elimina a fila. O gerente de operações pede que a singularidade receba crachá.",
+    "conditions": {
+      "min_chaos": 50
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Usá-lo para reciclar desperdícios",
+        "cost": 950,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 2,
+          "chaos": 15
+        }
+      },
+      {
+        "label": "Transportá-lo para uma universidade",
+        "cost": 500,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 12,
+          "chaos": -10
+        }
+      },
+      {
+        "label": "Alimentá-lo com atas de reunião",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 10,
+          "damage": 200
+        }
+      }
+    ]
+  },
+  {
+    "id": "patente",
+    "title": "A PATENTE EXIGE PATENTEAR O ADVOGADO",
+    "description": "Seu produto experimental criou uma tese jurídica autorreplicante. A tese já possui um escritório próprio.",
+    "conditions": {
+      "experimental": true
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Negociar licença de raciocínio",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "innovation": 1,
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Publicar a receita em domínio público",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Contratar um paradoxo como defensor",
+        "cost": 400,
+        "risk": "50%: economia de R$ 1.500; 50%: custo adicional de R$ 500.",
+        "effects": {
+          "chance": {
+            "probability": 0.5,
+            "success": {
+              "cash": 1500
+            },
+            "failure": {
+              "cash": -500
+            }
+          },
+          "chaos": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "silencio",
+    "title": "O SILÊNCIO DA FÁBRICA FOI VENDIDO",
+    "description": "Um investidor comprou todos os momentos de silêncio. Agora até a pausa para café precisa emitir nota musical.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Recomprar o direito ao descanso",
+        "cost": 600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 10,
+          "chaos": -5
+        }
+      },
+      {
+        "label": "Lançar uma campanha inteiramente sussurrada",
+        "cost": 450,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": 4
+        }
+      },
+      {
+        "label": "Cobrar por visitas ao barulho",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 600,
+          "reputation": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "continentes",
+    "title": "OS CONTINENTES QUEREM MUDAR DE LUGAR",
+    "description": "A tectônica de placas apresentou um plano de reorganização logística. A África pede para ficar perto do estoque.",
+    "conditions": {
+      "min_month": 19,
+      "min_chaos": 45
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Patrocinar uma rota piloto",
+        "cost": 1600,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.5,
+              "duration": 4,
+              "market": "africa",
+              "company": "player"
+            }
+          ],
+          "unlock_market": "africa",
+          "chaos": 15
+        }
+      },
+      {
+        "label": "Investir em embalagens adaptáveis",
+        "cost": 800,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "reputation": 7
+        }
+      },
+      {
+        "label": "Aguardar a aprovação geográfica",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5
+        }
+      }
+    ]
+  },
+  {
+    "id": "eleicao",
+    "title": "A LOGOMARCA FOI ELEITA PARA O SENADO",
+    "description": "Os caracteres ASCII conquistaram votos suficientes. O mandato exige uma fonte monoespaçada e gabinete de 80 colunas.",
+    "conditions": {
+      "min_month": 19
+    },
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Separar formalmente empresa e mandato",
+        "cost": 900,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 15,
+          "aggression": -1
+        }
+      },
+      {
+        "label": "Licenciar discursos efervescentes",
+        "cost": 700,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 12,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.35,
+              "duration": 4,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Convocar nova eleição tipográfica",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.95,
+              "duration": 2,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "tempo",
+    "title": "O ÚLTIMO TRIMESTRE PEDIU HORA EXTRA",
+    "description": "Outubro, novembro e dezembro querem adicional noturno. O calendário ameaça acrescentar uma segunda segunda-feira.",
+    "conditions": {
+      "min_month": 21
+    },
+    "weight": 3,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Pagar um acordo com o calendário",
+        "cost": 1100,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 8,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.25,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Produzir campanhas fora do tempo",
+        "cost": 1400,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": 15,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.45,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Manter o expediente de 24 anos",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "chaos": -5,
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 0.93,
+              "duration": 1,
+              "market": "all",
+              "company": "player"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "acucar",
+    "title": "O AÇÚCAR EXIGIU DIREITO DE RESPOSTA",
+    "description": "Um grão de açúcar processou o departamento de marketing por uso indevido da expressão energia. O juiz solicitou uma lupa.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Criar um comitê de ingredientes",
+        "cost": 350,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "reputation": 7,
+          "chaos": -3
+        }
+      },
+      {
+        "label": "Lançar um documentário sobre o grão",
+        "cost": 550,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "effects": [
+            {
+              "kind": "demand",
+              "value": 1.22,
+              "duration": 3,
+              "market": "all",
+              "company": "player"
+            }
+          ],
+          "chaos": 4
+        }
+      },
+      {
+        "label": "Resolver por arbitragem culinária",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": -200,
+          "reputation": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "chuva",
+    "title": "CHUVA DE NOTAS FISCAIS NO PÁTIO",
+    "description": "Uma nuvem começou a emitir documentos fiscais. Os boletos vencem antes de tocar o chão.",
+    "conditions": {},
+    "weight": 1,
+    "repeat": false,
+    "options": [
+      {
+        "label": "Contratar uma cobertura contábil",
+        "cost": 450,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "efficiency": 1,
+          "chaos": -4
+        }
+      },
+      {
+        "label": "Vender a nuvem como serviço empresarial",
+        "cost": 650,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": 1400,
+          "chaos": 8
+        }
+      },
+      {
+        "label": "Esperar a nuvem passar",
+        "cost": 0,
+        "risk": "Sem risco adicional.",
+        "effects": {
+          "cash": -300,
+          "reputation": 2
+        }
+      }
+    ]
+  }
+]

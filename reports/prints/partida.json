@@ -1,0 +1,432 @@
+{
+  "seed": "1000",
+  "estrategia": "expansao",
+  "final": "magnate",
+  "participacao": 0.42519495136264973,
+  "decisoes": [
+    {
+      "ano": 1998,
+      "acao": [
+        "expand",
+        "latam",
+        null
+      ]
+    },
+    {
+      "ano": 1998,
+      "acao": [
+        "research",
+        "abraco",
+        null
+      ]
+    },
+    {
+      "ano": 1999,
+      "acao": [
+        "factory",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 1999,
+      "acao": [
+        "expand",
+        "east",
+        null
+      ]
+    },
+    {
+      "ano": 2000,
+      "acao": [
+        "upgrade",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2000,
+      "acao": [
+        "expand",
+        "na",
+        null
+      ]
+    },
+    {
+      "ano": 2000,
+      "evento": "pernas",
+      "opcao": 2
+    },
+    {
+      "ano": 2001,
+      "acao": [
+        "factory",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2001,
+      "acao": [
+        "expand",
+        "africa",
+        null
+      ]
+    },
+    {
+      "ano": 2002,
+      "acao": [
+        "expand",
+        "sea",
+        null
+      ]
+    },
+    {
+      "ano": 2002,
+      "acao": [
+        "research",
+        "zumbi",
+        null
+      ]
+    },
+    {
+      "ano": 2003,
+      "acao": [
+        "research",
+        "dentada",
+        null
+      ]
+    },
+    {
+      "ano": 2003,
+      "acao": [
+        "research",
+        "dentada",
+        null
+      ]
+    },
+    {
+      "ano": 2003,
+      "evento": "microfones",
+      "opcao": 1
+    },
+    {
+      "ano": 2004,
+      "acao": [
+        "expand",
+        "asia",
+        null
+      ]
+    },
+    {
+      "ano": 2004,
+      "acao": [
+        "expand",
+        "west",
+        null
+      ]
+    },
+    {
+      "ano": 2005,
+      "acao": [
+        "upgrade",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2005,
+      "acao": [
+        "efficiency",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2006,
+      "acao": [
+        "factory",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2006,
+      "acao": [
+        "efficiency",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2006,
+      "evento": "gravida",
+      "opcao": 3
+    },
+    {
+      "ano": 2007,
+      "acao": [
+        "marketing",
+        "sea:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2007,
+      "acao": [
+        "marketing",
+        "east:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2008,
+      "acao": [
+        "marketing",
+        "asia:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2008,
+      "acao": [
+        "marketing",
+        "west:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2009,
+      "acao": [
+        "marketing",
+        "africa:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2009,
+      "acao": [
+        "marketing",
+        "west:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2009,
+      "evento": "chamas",
+      "opcao": 1
+    },
+    {
+      "ano": 2010,
+      "acao": [
+        "marketing",
+        "latam:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2010,
+      "acao": [
+        "marketing",
+        "br:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2011,
+      "acao": [
+        "technology",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2011,
+      "acao": [
+        "marketing",
+        "latam:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2012,
+      "acao": [
+        "marketing",
+        "na:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2012,
+      "acao": [
+        "marketing",
+        "east:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2012,
+      "evento": "sobretudo",
+      "opcao": 3
+    },
+    {
+      "ano": 2013,
+      "acao": [
+        "marketing",
+        "latam:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2013,
+      "acao": [
+        "marketing",
+        "asia:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2014,
+      "acao": [
+        "efficiency",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2014,
+      "acao": [
+        "efficiency",
+        "",
+        null
+      ]
+    },
+    {
+      "ano": 2015,
+      "acao": [
+        "marketing",
+        "sea:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2015,
+      "acao": [
+        "marketing",
+        "west:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2015,
+      "evento": "dentistas",
+      "opcao": 3
+    },
+    {
+      "ano": 2016,
+      "acao": [
+        "marketing",
+        "sea:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2016,
+      "acao": [
+        "marketing",
+        "br:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2017,
+      "acao": [
+        "marketing",
+        "na:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2017,
+      "acao": [
+        "marketing",
+        "africa:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2018,
+      "acao": [
+        "marketing",
+        "africa:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2018,
+      "acao": [
+        "marketing",
+        "east:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2018,
+      "evento": "bubble_rival",
+      "opcao": 2
+    },
+    {
+      "ano": 2019,
+      "acao": [
+        "merge",
+        "bubble",
+        null
+      ]
+    },
+    {
+      "ano": 2019,
+      "acao": [
+        "marketing",
+        "asia:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2020,
+      "acao": [
+        "marketing",
+        "east:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2020,
+      "acao": [
+        "marketing",
+        "br:tradicional",
+        null
+      ]
+    },
+    {
+      "ano": 2021,
+      "acao": [
+        "marketing",
+        "sea:agressiva",
+        null
+      ]
+    },
+    {
+      "ano": 2021,
+      "acao": [
+        "marketing",
+        "na:promocao",
+        null
+      ]
+    },
+    {
+      "ano": 2021,
+      "evento": "dragao",
+      "opcao": 3
+    }
+  ]
+}

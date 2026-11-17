@@ -1,0 +1,19 @@
++------------------------ PLUTONITA — ANO 19/24 — 2016 ------------------------+
+| Caixa: R$ 401.751,45  |  Último ano: R$ 37.062,39                            |
+| Mercado: 29.5%  |  Reputação: 78  |  Caos: 10/100                            |
++------------------------------------------------------------------------------+
+TIMES: Relógio de ponto solicita compensação por horas trabalhadas em círculo.
+
+ESCOLHAS — 2 ação(ões) restante(s); cada proposta usa 1.
+[1] Reduzir o custo de produção — R$ 3.500,00
+    Custo variável-base -6,5%. Sem nova manutenção.
+[2] Aprimorar laboratório — R$ 2.000,00
+    Laboratório +1. Melhora produtos e libera experimentos.
+[3] África e Oriente Médio: tradicional — R$ 650,00
+    Mais procura agora; a campanha perde força a cada ano.
+[4] Outras ações
+
+CONSULTA — não gasta ação
+[5] Ver empresa
+
+[0 / Enter] Avançar ano     [6] Salvar e sair

@@ -1,0 +1,29 @@
+                               Fechamento de 1998                               
++------------------------------------------------------------------------------+
+| Item                                                 | Valor                 |
+|------------------------------------------------------+-----------------------|
+| Receita                                              | R$ 5.529,60           |
+| Custo variável                                       | R$ 1.493,80           |
+| Manutenção industrial                                | R$ 450,00             |
+| Despesas comerciais                                  | R$ 260,00             |
+| Juros                                                | R$ 0,00               |
+| Royalties de fusões/acordos                          | R$ 0,00               |
+| Despesas totais                                      | R$ 2.203,80           |
+| Lucro operacional                                    | R$ 3.325,80           |
++------------------------------------------------------------------------------+
+Caixa imediatamente antes das vendas: R$ 2.850,00; após operação: R$ 6.175,80.
+Produção vendida: 1100/1100 (100.0%); demanda inicial não atendida: 0.
+Participação global: 5.2%; mudança +5.24 pontos percentuais.
+         Contribuição por região (antes de fábrica, juros e royalties)          
++------------------------------------------------------------------------------+
+| Mercado                                | Un.   | Preço     | Contribuição    |
+|----------------------------------------+-------+-----------+-----------------|
+| Brasil                                 | 588   | R$ 5,12   | R$ 2.082,06     |
+| América Latina (exceto Brasil)         | 512   | R$ 4,92   | R$ 1.693,74     |
++------------------------------------------------------------------------------+
+Investimentos e consequências de caixa são lançamentos separados do lucro 
+operacional:
+  R$ -1.300,00: América Latina (exceto Brasil)
+  R$ -850,00: Abraço Congelante (0/1)
+Caixa atual (inclui ações e eventos posteriores): R$ 6.175,80
+Últimos resultados: 1998: R$ 3.325,80

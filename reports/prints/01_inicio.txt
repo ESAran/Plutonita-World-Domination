@@ -1,0 +1,27 @@
+
+    ____  __    __  __________  _   _______________
+   / __ \/ /   / / / /_  __/ / / /| / /  _/_  __/   |
+  / /_/ / /   / / / / / / / / / / |/ // /  / / / /| |
+ / ____/ /___/ /_/ / / / / /_/ / /|  // /  / / / ___ |
+/_/   /_____/\____/ /_/  \____/_/ |_/___/ /_/ /_/  |_|
+               W O R L D   D O M I N A T I O N
+
++------------------------ PLUTONITA — ANO 01/24 — 1998 ------------------------+
+| Caixa: R$ 5.000,00  |  Primeiro ano: faça até duas escolhas.                 |
+| Mercado: 0.0%  |  Reputação: 50  |  Caos: 5/100                              |
++------------------------------------------------------------------------------+
+TIMES: Grupo de abóboras abre consultoria de imagem para vegetais públicos.
+
+ESCOLHAS — 2 ação(ões) restante(s); cada proposta usa 1.
+[1] Reduzir o custo de produção — R$ 700,00
+    Custo variável-base -6,5%. Sem nova manutenção.
+[2] Lançar Baba de Bruxa — R$ 850,00
+    Demanda oscila ±12%; marketing recebe bônus.
+[3] Entrar em América Latina (exceto Brasil) — R$ 1.300,00
+    Novo mercado; despesas +R$ 130/ano.
+[4] Outras ações
+
+CONSULTA — não gasta ação
+[5] Ver empresa
+
+[0 / Enter] Avançar ano     [6] Salvar e sair

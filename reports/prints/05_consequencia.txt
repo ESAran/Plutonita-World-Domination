@@ -1,0 +1,17 @@
++-------------------------- A FÁBRICA VOLTOU GRÁVIDA --------------------------+
+| O galpão voltou com uma filial recém-nascida. A maternidade exige uma        |
+| certidão com o nome do zoneamento urbano.                                    |
++------------------------------------------------------------------------------+
+DECISÃO DE 2006 — não usa ação. Caixa: R$ 107.936,95
+
+[1] Registrar e acolher a filial — R$ 1.200,00
+    Caos +10; capacidade +1100; manutenção/ano +240; desdobramento futuro em 6 
+ano(s)
+
+[2] Criar guarda compartilhada internacional — R$ 400,00
+    capacidade +550; manutenção/ano +120; desdobramento futuro em 6 ano(s)
+
+[3] Negociar adoção por uma cooperativa — R$ 0,00
+    caixa +1500; reputação +3
+
+[0] Salvar e sair; resolver depois
