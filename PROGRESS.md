@@ -62,6 +62,6 @@ Os 35 testes passaram novamente. Git local inicializado em `main`; caches, ambie
 - [x] README com header original, controles novos e sete imagens atualizadas.
 - [x] 42 testes passaram; 600 campanhas anuais e dois cenários dirigidos concluídos.
 - [x] Código antigo recuperado e validado por hashes após indisponibilidade de cópias do iCloud.
-- [ ] Enviar e verificar a árvore no repositório público fornecido pelo usuário: ESAran/Plutonita-World-Domination.
+- [x] Publicado no repositório público fornecido pelo usuário: ESAran/Plutonita-World-Domination. A árvore remota coincide com o commit local (36e26f47afbdcfbf5bee523ed31d567c4dd1068e).
 
 O usuário pediu envio imediato sem novos testes. Resultados acima já estavam concluídos antes desse pedido. A revisão substitui a escala mensal e o fluxo anterior; as seções anteriores registram o histórico.
