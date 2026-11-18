@@ -7,9 +7,9 @@ from random import Random
 from ..actions import RuleError
 from ..persistence import SaveError, atomic_json, tuples
 from .catalog import (COLLAPSE_YEARS, CRITICAL_CHAOS, ENDINGS, FLAVORS,
-                      GLOBAL_YEAR, MARKETS, NEWS, UNITS, YEARS)
+                      GLOBAL_YEAR, MARKETS, UNITS, YEARS)
 from .state import State
-from .stories import EVENTS
+from .stories import EVENTS, NEWS
 
 
 class Game:
@@ -57,6 +57,13 @@ class Game:
             multiplier *= 1.20
         if s.flags.get("travel_year"):
             multiplier *= .90
+        for flag, bonus in (("peso_income", 1.10), ("elimar_promoted", 1.30),
+                            ("elimar_discreet", 1.20), ("elimar_gone", .85),
+                            ("stock_eaten", .80), ("court_ally", 1.15),
+                            ("court_predator", .75), ("court_supply", 1.10),
+                            ("court_tithe", .90)):
+            if s.flags.get(flag):
+                multiplier *= bonus
         return multiplier
 
     def unit_income(self, key):
@@ -69,6 +76,8 @@ class Game:
                 multiplier *= 1.5
             if s.flags.get("extra_floor"):
                 multiplier *= 1.2
+            if s.flags.get("shared_custody"):
+                multiplier *= .85
         if key == "orbital" and s.flags.get("sealed"):
             multiplier *= .5
         return round(UNITS[key].income * multiplier)
@@ -164,6 +173,8 @@ class Game:
             growth *= 1.15
         if s.flags.get("future_sales"):
             growth *= 1.20
+        if s.flags.get("predators"):
+            growth *= 1.30 if s.flags.get("big_predators") else 1.15
         cap = 25 if key in ("br", "latam") else 16
         growth = round(min(cap, growth / self.competition(key)), 1)
         return round(min(100 - s.markets[key], growth), 1)
@@ -186,11 +197,14 @@ class Game:
             if item["due"] <= s.turn:
                 s.scheduled.remove(item)
                 return item["event"]
-        if s.turn >= 4 and s.units["factory"] and "walking" not in s.seen:
-            return "walking"
-        if s.turn in (6, 8, 12, 15, 18, 21):
-            pool = [key for key in ("audit", "forecast") if key not in s.seen
-                    and (key != "audit" or s.units["factory"])]
+        if s.turn >= 4 and s.units["factory"] and not {"walking", "walking_v2"}.intersection(s.seen):
+            return "walking_v2"
+        if s.turn in (3, 5, 6, 8, 10, 12, 14, 16, 18, 20, 22):
+            pool = [key for key, available in (
+                ("elimar", s.turn >= 3),
+                ("counterfeit", s.turn >= 6 and len(s.flavors) >= 2),
+                ("court", s.turn >= GLOBAL_YEAR),
+            ) if available and key not in s.seen]
             if pool:
                 return self.rng.choice(pool)
         return None
@@ -207,7 +221,9 @@ class Game:
             s.markets[key] = round(min(100, s.markets[key] + change), 1)
         s.chaos = max(0, min(100, s.chaos + self.chaos_drift()))
         s.critical_years = s.critical_years + 1 if s.chaos >= CRITICAL_CHAOS else 0
-        news = [self.rng.choice(NEWS)]
+        available_news = [item["text"] for item in NEWS
+                          if all(s.flags.get(flag) for flag in item.get("flags", ()))]
+        news = [self.rng.choice(available_news)]
         if s.turn == GLOBAL_YEAR - 1:
             news.insert(0, "ABERTURA GLOBAL: no ano 10, América do Norte, Europa, Ásia e África "
                         "entram no mapa. GomaMax, SweetCorp e Dr. Bubble já estão nesses mercados.")
@@ -221,10 +237,17 @@ class Game:
         if s.critical_years >= COLLAPSE_YEARS:
             s.ending = "collapse"
         event = None if s.ending else self._event()
+        expenses = 0
+        if event and EVENTS[event].get("arrival"):
+            before = s.cash
+            outcomes = self._effects(EVENTS[event]["arrival"])
+            expenses = before - s.cash
+            news.extend([EVENTS[event]["arrival_detail"], *outcomes])
         s.papers.append({"turn": s.turn, "year": s.year, "income": income,
                          "cash": s.cash, "growth": growth, "chaos": s.chaos,
                          "share": self.world_share(), "news": news,
-                         "event": event, "decision": None})
+                         "event": event, "decision": None,
+                         "event_expenses": expenses, "outcomes": []})
         s.phase = "newspaper"
 
     def pending_event(self):
@@ -246,7 +269,32 @@ class Game:
             raise RuleError("Caixa insuficiente. As alternativas gratuitas continuam disponíveis.")
         s.cash -= option["cost"]
         s.invested += option["cost"]
-        effects = option["effects"]
+        outcomes = self._effects(option["effects"])
+        s.seen.append(key)
+        s.papers[-1]["decision"] = option["label"]
+        s.papers[-1].setdefault("outcomes", []).extend(outcomes)
+        s.history.append({"turn": s.turn, "text": option["label"], "cost": option["cost"]})
+        return "Decisão registrada: " + option["label"] + "."
+
+    def _effects(self, effects):
+        """Aplica custos/consequências uma vez; sorteios só ocorrem após uma decisão válida."""
+        s = self.state
+        outcomes = []
+        loss = effects.get("cash_loss", 0)
+        if s.flags.get("big_predators"):
+            loss = effects.get("big_predator_loss", loss)
+        if loss:
+            amount = round(s.cash * loss)
+            s.cash -= amount
+            text = f"Despesa narrativa: -R$ {amount:,} ({loss:.0%} do caixa)."
+            outcomes.append(text)
+            s.history.append({"turn": s.turn, "text": text, "cost": amount})
+        if effects.get("cash_gain"):
+            amount = effects["cash_gain"]
+            s.cash += amount
+            text = f"Acordo recebido: +R$ {amount:,}."
+            outcomes.append(text)
+            s.history.append({"turn": s.turn, "text": text, "cost": -amount})
         s.chaos = max(0, min(100, s.chaos + effects.get("chaos", 0)))
         s.flags.update(effects.get("flags", {}))
         if s.chaos < CRITICAL_CHAOS:
@@ -259,10 +307,14 @@ class Game:
         if "schedule" in effects:
             delay, event = effects["schedule"]
             s.scheduled.append({"due": s.turn + delay, "event": event})
-        s.seen.append(key)
-        s.papers[-1]["decision"] = option["label"]
-        s.history.append({"turn": s.turn, "text": option["label"], "cost": option["cost"]})
-        return "Decisão registrada: " + option["label"] + "."
+        if "chance" in effects:
+            chance = effects["chance"]
+            outcome = chance["success"] if self.rng.random() < chance["probability"] else chance["failure"]
+            outcomes.extend(self._effects(outcome))
+        if effects.get("result"):
+            outcomes.append(effects["result"])
+            s.history.append({"turn": s.turn, "text": effects["result"], "cost": 0})
+        return outcomes
 
     def _ending(self):
         s = self.state
@@ -361,6 +413,11 @@ class Game:
                 raise ValueError("Decisão inválida.")
             if not isinstance(paper["news"], list) or any(not isinstance(n, str) for n in paper["news"]):
                 raise ValueError("Notícias inválidas.")
+            if not integer(paper.get("event_expenses", 0), 0, 10**18):
+                raise ValueError("Despesa narrativa inválida.")
+            if (not isinstance(paper.get("outcomes", []), list)
+                    or any(not isinstance(text, str) for text in paper.get("outcomes", []))):
+                raise ValueError("Desfecho narrativo inválido.")
             if any(not integer(paper[k], 0, 10**18) for k in ("income", "cash")):
                 raise ValueError("Balanço inválido.")
             if not isinstance(paper["growth"], dict) or set(paper["growth"]) - set(MARKETS):

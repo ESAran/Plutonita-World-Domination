@@ -96,12 +96,3 @@ ENDINGS = {
                  "A empresa atravessou 24 anos. Não conquistou o planeta, mas conquistou clientes "
                  "que agora só aceitam pagar em dinheiro, por precaução."),
 }
-
-NEWS = (
-    "Receita Federal pede que a fábrica diferencie filial de descendente.",
-    "Conselho de administração exige que todas as presenças sejam físicas. A votação termina empatada.",
-    "Auditoria confirma: o galpão tem mais metros quadrados por dentro. A imobiliária pede revisão do aluguel.",
-    "Concorrente solicita amostra de Plutonita. Amostra solicita referências do concorrente.",
-    "Pesquisa de mercado encontra consumidores que ainda não nasceram. Previsão de vendas é mantida.",
-    "Departamento jurídico recomenda não assinar documentos que já contenham sua assinatura.",
-)

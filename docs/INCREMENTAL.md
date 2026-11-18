@@ -50,7 +50,10 @@ todos. Um capítulo adiado permanece na agenda. Resolver a manchete altera o
 estado para o ano seguinte, sem recalcular a renda que já foi recebida.
 
 O arquivo permite reler notícias e decisões. O caixa mostrado no balanço é o do
-fechamento, anterior a possíveis gastos para resolver a manchete.
+fechamento, após despesas que chegam com o acontecimento e antes de possíveis
+gastos para resolver a manchete. Essas despesas aparecem separadas da receita.
+Sorteios só acontecem depois de uma decisão válida; o desfecho fica gravado no
+jornal e não é sorteado novamente ao retomá-lo.
 
 ## Caos e finais
 
@@ -61,10 +64,23 @@ Voltar abaixo de 75 interrompe a sequência. A intervenção abre mão do bônus
 Atomic Mistério, de novas compras orbitais e de metade da renda orbital existente;
 ela também interrompe aumentos anuais de caos. Não existe taxa recorrente de limpeza.
 
-A cadeia da fábrica ambulante pode abrir uma filial, retornar com outra instalação
-e propor uma federação. A decisão que abre mão do final perfeito é identificada
+A cadeia da fábrica ambulante abre uma filial em pesos, aumenta o domínio na
+América Latina e volta grávida após três anos. No retorno, perde-se o bônus em
+pesos e 25% do caixa após a receita anual. É possível investigar a paternidade,
+assumir a família ou encerrar a disputa. A autonomia pode levar a uma federação.
+A decisão que abre mão do final perfeito é identificada
 explicitamente como irreversível. As alternativas gratuitas evitam ficar preso
 num jornal por falta de caixa.
+
+Elimar Gonzales pode receber uma gratificação discreta (+20% de renda) ou uma
+promoção pública (+30% até a homenagem sair no ano seguinte). A divulgação revela
+as sete famílias, provoca sua falência por pensões e substitui o bônus por uma
+penalidade de 15%. O jornal oferece um acordo para tentar recuperar a operação.
+
+Plutonitas predadoras aceleram a conquista em 15% ou 30%, mas depois ficam sem
+falsificações e ameaçam a produção. No tribunal satírico, a infiltração tem 65%
+de sucesso (+15% de renda) e 35% de fracasso (-25%, com possibilidade posterior
+de capturar a criatura). As probabilidades e efeitos aparecem antes da escolha.
 
 Finais são avaliados depois da leitura e da decisão do jornal. A perda de controle
 por caos tem prioridade. A vitória perfeita exige seis mercados em 100%, caos

@@ -92,16 +92,19 @@ use `--save-dir` para guardar campanhas separadas.
 ## Estado desta entrega
 
 Há cinco categorias de unidades, três melhorias por categoria, sete sabores,
-seis mercados, seis decisões narrativas iniciais e oito finais. A pressão dos
-concorrentes mundiais ainda é simplificada. O catálogo de humor é provisório.
+seis mercados e oito finais. O jornal agora inclui as cadeias da fábrica no
+Uruguai, Plutonitas caçando falsificações, Elimar Gonzales e a infiltração no
+tribunal satírico. São quatro premissas com retornos posteriores, despesas e
+escolhas de risco. A pressão dos concorrentes mundiais ainda é simplificada.
 
 Verificações rápidas cobriram inicialização, compra/pesquisa, mapa, jornal,
 salvamento e campanha até o encerramento. Uma partida de referência alcançou o
-final perfeito no ano 23; isso **não comprova o equilíbrio** das demais estratégias.
+final perfeito no ano 23 antes da revisão narrativa; isso **não comprova o equilíbrio** das demais estratégias.
 O próximo passo é jogar e ajustar ritmo, clareza, escolhas e acontecimentos.
 
 - [Roadmap e próximos passos](docs/ROADMAP_INCREMENTAL.md)
 - [Regras da campanha incremental](docs/INCREMENTAL.md)
+- [Direção de humor e premissas aprovadas](docs/DIRECAO_DE_HUMOR.md)
 - [Documentação da campanha clássica](docs/CLASSICO.md)
 
 Regras novas em `plutonita/incremental/`; valores iniciais em `catalog.py`,

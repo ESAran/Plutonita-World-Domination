@@ -114,7 +114,8 @@ def map_screen(console, game):
         console.print(line)
     console.print("# consolidado   + presença   . ainda não entrou", style="dim")
     if s.flags.get("walking"):
-        console.print("Uruguai: filial da fábrica ambulante registrada no mapa.", style="magenta")
+        note = "filial da fábrica ambulante; bônus em pesos ativo" if s.flags.get("peso_income") else "rota aberta pela fábrica ambulante"
+        console.print("Uruguai: " + note + ".", style="magenta")
     for index, (key, market) in enumerate(MARKETS.items(), 1):
         if key in s.markets:
             progress = s.markets[key]
@@ -144,6 +145,8 @@ def newspaper(console, game, paper=None, archive=False):
     ))
     console.print(f"RENDA DO ANO: +{money(paper['income'])}  |  MUNDO: {paper['share']:.1f}%", style="bold")
     console.print(f"Caixa no fechamento: {money(paper['cash'])}  ·  Caos: {paper['chaos']}/100", style="dim")
+    if paper.get("event_expenses"):
+        console.print(f"Despesa do acontecimento, já descontada: -{money(paper['event_expenses'])}", style="yellow")
     for line in paper["news"]:
         console.print("\n" + line)
     growth = [f"{MARKETS[key].name} +{change:.1f}" for key, change in paper["growth"].items() if change]
@@ -155,6 +158,8 @@ def newspaper(console, game, paper=None, archive=False):
         console.print(event["body"])
         if paper["decision"] is not None:
             console.print("\nDecisão registrada: " + paper["decision"], style="bright_green")
+            for outcome in paper.get("outcomes", []):
+                console.print(outcome, style="yellow")
         elif not archive:
             console.print(f"\nDECISÃO PARA O PRÓXIMO ANO · Caixa atual: {money(s.cash)}", style="magenta")
             for i, option in enumerate(event["options"], 1):

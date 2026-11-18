@@ -39,7 +39,7 @@ gestão de preços, manutenção, estoque, distribuição manual ou limite de a�
 Esta etapa entrega uma **base para jogar e avaliar**, não o balanceamento final.
 O modo clássico e seus arquivos de campanha/perfil ficam preservados.
 
-Entrega: cinco categorias de unidades, sete sabores, seis mercados, seis decisões
+Entrega original: cinco categorias de unidades, sete sabores, seis mercados, seis decisões
 narrativas iniciais e oito finais. Uma partida de referência atingiu o final
 perfeito no ano 23; o equilíbrio entre rotas continua em aberto. A disputa global
 usa uma curva de resistência anual, ainda sem decisões independentes dos rivais.
@@ -55,7 +55,9 @@ usa uma curva de resistência anual, ainda sem decisões independentes dos rivai
 
 ### 3. Conteúdo e humor — calibração com o usuário
 
-- [ ] Preparar exemplos para seleção de tom antes de ampliar o catálogo.
+- [x] Preparar exemplos para seleção de tom antes de ampliar o catálogo.
+- [x] Registrar aprovações e rejeições em [Direção de humor](DIRECAO_DE_HUMOR.md).
+- [x] Implementar as cadeias aprovadas: fábrica/gravidez, falsificações, Elimar e tribunal.
 - [ ] Revisar textos provisórios; preferir consequências persistentes e humor
   corporativo diante do absurdo a trocadilhos infantis ou aleatoriedade gratuita.
 - [ ] Adicionar sabores, unidades e cadeias com escolhas e retornos próprios.
