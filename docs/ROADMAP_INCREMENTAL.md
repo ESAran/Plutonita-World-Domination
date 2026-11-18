@@ -22,21 +22,27 @@ gestão de preços, manutenção, estoque, distribuição manual ou limite de a�
 
 ## Etapas e critérios de conclusão
 
-### 1. Campanha jogável de ponta a ponta — em implementação
+### 1. Campanha jogável de ponta a ponta — primeira entrega implementada (18/11/2026)
 
-- [ ] Estado independente e regras de compras, melhorias e pesquisas.
-- [ ] Unidades com custo crescente e ganho anual explícito; sabores automáticos.
-- [ ] Painel compacto, laboratório, mapa e passagem anual sem ações limitadas.
-- [ ] Mercado brasileiro, América Latina e mercados globais a partir do ano 10.
-- [ ] Jornal anual com resultado financeiro, notícias e decisão quando aplicável.
-- [ ] Primeira cadeia narrativa: fábrica ambulante e filial uruguaia.
-- [ ] Pressão do caos com avisos, contenção com custo estratégico e desfecho.
-- [ ] Encerramento por prazo, vitória antecipada e finais alternativos iniciais.
-- [ ] Save atômico, seed e retomada no jornal sem repetir pagamentos/decisões.
-- [ ] Testes de regras, transições, saves, interface e campanhas completas.
+- [x] Estado independente e regras de compras, melhorias e pesquisas.
+- [x] Unidades com custo crescente e ganho anual explícito; sabores automáticos.
+- [x] Painel compacto, laboratório, mapa e passagem anual sem ações limitadas.
+- [x] Mercado brasileiro, América Latina e mercados globais a partir do ano 10.
+- [x] Jornal anual com resultado financeiro, notícias e decisão quando aplicável.
+- [x] Primeira cadeia narrativa: fábrica ambulante e filial uruguaia.
+- [x] Pressão do caos com avisos, contenção com custo estratégico e desfecho.
+- [x] Encerramento por prazo, vitória antecipada e finais alternativos iniciais.
+- [x] Save atômico, seed e retomada no jornal sem repetir pagamentos/decisões.
+- [x] Verificações rápidas de execução, interface, retomada e campanha completa.
+- [ ] Suíte de regressão da campanha nova (adiada para priorizar entrega, conforme pedido).
 
 Esta etapa entrega uma **base para jogar e avaliar**, não o balanceamento final.
 O modo clássico e seus arquivos de campanha/perfil ficam preservados.
+
+Entrega: cinco categorias de unidades, sete sabores, seis mercados, seis decisões
+narrativas iniciais e oito finais. Uma partida de referência atingiu o final
+perfeito no ano 23; o equilíbrio entre rotas continua em aberto. A disputa global
+usa uma curva de resistência anual, ainda sem decisões independentes dos rivais.
 
 ### 2. Equilíbrio e ritmo — após jogar a base
 
