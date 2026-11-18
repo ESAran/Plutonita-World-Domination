@@ -297,19 +297,28 @@ def main():
     parser.add_argument('--no-color', action='store_true', help='desativar cores')
     parser.add_argument('--no-clear', action='store_true', help='preservar telas anteriores no terminal')
     parser.add_argument('--resume', action='store_true', help='continuar diretamente o salvamento')
+    parser.add_argument('--classic', action='store_true', help='jogar a campanha clássica anterior ao redesenho')
     parser.add_argument('--save-dir', type=Path, default=Path('saves'), help='diretório de campanha e perfil (padrão: saves)')
     parser.add_argument('--balance', help='JSON com parâmetros de balanceamento substitutos')
     args = parser.parse_args()
+    if args.balance and not args.classic:
+        parser.error('--balance pertence ao modo anterior; use --classic --balance ARQUIVO')
     console = Console(no_color=args.no_color, highlight=False, markup=False, width=None)
     console.width = min(80, console.width)
     terminal = None
     try:
-        terminal = Terminal(console, args.save_dir, load_balance(args.balance), clear=not args.no_clear)
+        if args.classic:
+            terminal = Terminal(console, args.save_dir, load_balance(args.balance), clear=not args.no_clear)
+        else:
+            from ..incremental.ui import Terminal as IncrementalTerminal
+            terminal = IncrementalTerminal(console, args.save_dir, clear=not args.no_clear)
         terminal.home(args.seed, args.resume)
     except (EOFError, KeyboardInterrupt):
         console.print('\nSessão interrompida.')
         if terminal and terminal.game:
-            try: terminal.checkpoint(); console.print('Campanha salva. Continue com python main.py --resume.')
+            try:
+                terminal.checkpoint()
+                console.print('Campanha salva. Continue com python main.py ' + ('--classic ' if args.classic else '') + '--resume.')
             except OSError as exc: console.print(f'Não foi possível salvar: {exc}', style='red')
     except (SaveError, OSError, ValueError) as exc:
         console.print(f'Não foi possível concluir a operação: {exc}', style='red')
